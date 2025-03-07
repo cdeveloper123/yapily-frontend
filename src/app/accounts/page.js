@@ -71,7 +71,7 @@ export default function Accounts() {
                     {account.id}
                     <button
                       onClick={() => copyToClipboard(account.id)}
-                      className="p-1 rounded-md bg-gray-200 hover:bg-gray-300 transition"
+                      className="p-1 rounded-md bg-gray-200 hover:bg-gray-300 transition cursor-pointer"
                     >
                       <Clipboard
                         color="blue"
@@ -96,7 +96,7 @@ export default function Accounts() {
                 <div className="flex items-center gap-3 !mt-4">
                   <button
                     onClick={() => toggleBalance(account._id)}
-                    className="!p-2 !border !border-gray-300 !rounded-lg flex items-center gap-2 !text-black hover:bg-gray-200 transition"
+                    className="!p-2 !border !border-gray-300 !rounded-lg flex items-center gap-2 !text-black hover:bg-gray-200 transition cursor-pointer"
                   >
                     {showBalance[account._id] ? (
                       <>

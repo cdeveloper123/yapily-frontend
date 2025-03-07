@@ -2,15 +2,9 @@
 import { useState } from "react";
 import { Banknote, CreditCard, Building2, ReceiptText } from "lucide-react";
 import Modal from "../../components/Modal";
-import { useAuth } from "../context/AuthContext";
-import { useRouter } from "next/navigation";
 export default function Dashboard() {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [optionTitle, setOptionTitle] = useState("");
-  const [actionType, setActionType] = useState("");
-  const { authData } = useAuth();
-  const router = useRouter();
   const options = [
     {
       title: "Display Accounts",
@@ -60,7 +54,6 @@ export default function Dashboard() {
 
   const openModal = (title, action) => {
     setOptionTitle(title);
-    setActionType(action);
     setIsModalOpen(true);
   };
 
@@ -92,8 +85,6 @@ export default function Dashboard() {
               flex flex-col items-center text-center
               transform hover:-translate-y-1 hover:scale-105 gap-5 !p-5
               h-64`}
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
             onClick={(e) => {
               e.preventDefault();
               handleClick(option);

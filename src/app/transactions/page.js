@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useAuth } from "../context/AuthContext";
 import { useState, useEffect } from "react";
 
@@ -17,9 +18,17 @@ export default function TransactionsPage() {
   const displayedTransactions = transactions?.slice(0, 100);
   return (
     <div className="!container !mx-auto !px-4 !py-8">
-      <h1 className="!text-3xl !font-bold !text-center !mb-8 !text-black">
-        Transactions
-      </h1>
+      <div className="flex items-center justify-between !mb-8">
+        <Link
+          href={"/dashboard"}
+          className="!text-white !bg-black !px-4 !py-2 !rounded !hover:bg-gray-800"
+        >
+          Back to Dashboard
+        </Link>
+        <h1 className="!text-3xl !font-bold !text-center  !text-black flex-grow ">
+          Transactions
+        </h1>
+      </div>
 
       {displayedTransactions?.length === 0 ? (
         <p className="!text-center !text-gray-500">No transactions available</p>
