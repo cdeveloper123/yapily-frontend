@@ -1,10 +1,8 @@
 "use client";
 import Link from "next/link";
-import { useAuth } from "../context/AuthContext";
 import { useState, useEffect } from "react";
 
 export default function TransactionsPage() {
-  const { authData } = useAuth();
   const [transactions, setTransactions] = useState([]);
 
   useEffect(() => {
