@@ -18,6 +18,17 @@ export default function Dashboard() {
       shadowColor: "shadow-yellow-200",
     },
     {
+      title: "Show Transactions",
+      description: "Get a detailed overview of past and pending transactions.",
+      icon: (
+        <ReceiptText className="text-purple-500 transition-all duration-300 group-hover:scale-110" />
+      ),
+      action: "#show-transactions",
+      gradient: "from-purple-50 to-purple-100",
+      borderColor: "border-purple-200",
+      shadowColor: "shadow-purple-200",
+    },
+    {
       title: "Update Accounts",
       description: "Modify account details and manage linked accounts.",
       icon: (
@@ -39,20 +50,9 @@ export default function Dashboard() {
       borderColor: "border-green-200",
       shadowColor: "shadow-green-200",
     },
-    {
-      title: "Show Transactions",
-      description: "Get a detailed overview of past and pending transactions.",
-      icon: (
-        <ReceiptText className="text-purple-500 transition-all duration-300 group-hover:scale-110" />
-      ),
-      action: "#show-transactions",
-      gradient: "from-purple-50 to-purple-100",
-      borderColor: "border-purple-200",
-      shadowColor: "shadow-purple-200",
-    },
   ];
 
-  const openModal = (title, action) => {
+  const openModal = (title) => {
     setOptionTitle(title);
     setIsModalOpen(true);
   };
@@ -62,7 +62,7 @@ export default function Dashboard() {
       window.open("/accounts", "_blank", "noopener,noreferrer");
       return;
     } else {
-      openModal(option.title, option.action);
+      openModal(option.title);
     }
   };
   return (
