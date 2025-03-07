@@ -56,7 +56,7 @@ export default function Accounts() {
             accounts.map((account) => (
               <div
                 key={account._id}
-                className="!p-6 !border !border-gray-200 !rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:!border-blue-400 flex flex-col items-center"
+                className="!p-6 !border !border-gray-200 !rounded-2xl bg-white shadow-md transition-all duration-300 hover:shadow-lg hover:scale-105 hover:!border-blue-400 flex flex-col items-center min-h-[400px]"
               >
                 <div className="w-16 h-16 rounded-full bg-blue-100 flex items-center justify-center !mb-5">
                   <Banknote className="text-blue-600 w-10 h-10" />
