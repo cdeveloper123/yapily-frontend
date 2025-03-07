@@ -1,36 +1,58 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+# Yapily Frontend
 
-First, run the development server:
+## Installation and Setup Instructions
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. **Clone the repository**  
+   Clone the Yapily Frontend repository to your local machine:
+   ```bash
+   git clone https://github.com/cdeveloper123/yapily-frontend.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Install Dependencies**  
+   Navigate to the project directory and install the necessary dependencies:
+   ```bash
+   cd yapily-frontend
+   npm i
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+3. **Build the Project**  
+   Once the dependencies are installed, build the project:
+   ```bash
+   npm run build
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. **Start the Server**  
+   Run the server:
+   ```bash
+   npm run start
+   ```
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Usage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Login to Yapify**  
+   When you click on **Login to Yapify**, it triggers the endpoint `POST /accounts/initiate-auth`. This will redirect you to the authorization URL, where you will receive your **content token**.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Dashboard Page Options**  
+   After logging in, you will be taken to the **Dashboard** page. On the dashboard, you can choose from the following four options:
 
-## Deploy on Vercel
+   - **Show Accounts**  
+     This option runs the `GET /accounts` API. It returns the accounts stored in the MongoDB database.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   - **Show Transactions**  
+     This option runs the `GET /transactions/:id` API. It shows the transactions of a particular user by using the user’s ID.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+   - **Update Account**  
+     This option runs the `POST /accounts/fetch` API. It fetches account data from Yapily and updates the local database with the fetched account information.
+
+   - **Update Transaction**  
+     This option runs the `POST /transactions/fetch` API. It fetches transactions of the user from Yapily and updates the local database with the fetched transaction information.
+
+---
+
+## Notes
+
+- Ensure that your server is running before interacting with the dashboard.
+- The API endpoints interact with Yapily’s backend and will require the content token obtained through the login process.
